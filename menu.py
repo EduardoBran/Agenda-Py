@@ -1,8 +1,5 @@
-import os
-
-
 def menu_principal():
-    os.system('cls')
+    print('\n\n<><><><>  MENU  <><><><> \n')
     print('1 - Inserir Novo Registro')
     print('2 - Deletar Registro')
     print('3 - Atualizar Registro')

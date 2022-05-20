@@ -1,15 +1,13 @@
 import os
-from CFB_Cursos._Projeto_Agenda.conexao import ConexaoBanco
 from CFB_Cursos._Projeto_Agenda.menu import menu_principal
 from CFB_Cursos._Projeto_Agenda.funcoes_CRUD import menu_inserir, menu_deletar
 from CFB_Cursos._Projeto_Agenda.funcoes_CRUD import menu_atualizar, menu_consultar_ID, menu_consultar_nomes
 
-vcon = ConexaoBanco()
-
 op = ''
 while op != '6':
     menu_principal()
-    op = input('Digite uma opção: ')
+    op = input('\nDigite uma opção: ')
+    print()
 
     if op == '1':
         menu_inserir()
@@ -30,5 +28,5 @@ while op != '6':
         os.system('pause')
 
 os.system('pause')
-print('\n***Programa Encerrado')
-vcon.close()
+print('\n*** Programa Encerrado')
+

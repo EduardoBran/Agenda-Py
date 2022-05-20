@@ -12,22 +12,22 @@ def ConexaoBanco():
     return con
 
 
-def criar_tabela(conexao, sql):
-    try:
-        c = conexao.cursor()
-        c.execute(sql)
-        print('Tabela criada')
-    except Error as e:
-        print(e)
-
-
-vsql = """
-    CREATE TABLE tb_contatos(
-        N_IDCONTATO INTEGER PRIMARY KEY AUTOINCREMENT,
-        T_NOMECONTATO VARCHAR(30),
-        T_TELEFONECONTATO VARCHAR(14),
-        T_EMAILCONTATO VARCHAR(30)        
-    );
-"""
-vcon = ConexaoBanco()
-criar_tabela(vcon, vsql)
+# def criar_tabela(conexao, sql):
+#     try:
+#         c = conexao.cursor()
+#         c.execute(sql)
+#         print('Tabela criada')
+#     except Error as e:
+#         print(e)
+#
+#
+# vsql = """
+#     CREATE TABLE tb_contatos(
+#         N_IDCONTATO INTEGER PRIMARY KEY AUTOINCREMENT,
+#         T_NOMECONTATO VARCHAR(30),
+#         T_TELEFONECONTATO VARCHAR(14),
+#         T_EMAILCONTATO VARCHAR(30)
+#     );
+# """
+# vcon = ConexaoBanco()
+# criar_tabela(vcon, vsql)
