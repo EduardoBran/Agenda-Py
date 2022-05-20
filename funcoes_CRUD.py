@@ -54,7 +54,7 @@ def menu_deletar():
 
 
 def menu_atualizar():
-    #indicar o ID do registro que eu quero atualizar, colher os dados e dps indicar qual atualizar
+    # indicar o ID do registro que eu quero atualizar, colher os dados e dps indicar qual atualizar
     os.system('cls')
     r = consultar(vcon, "SELECT * FROM tb_contatos")
     print('\n\tLISTA ATUAL')
@@ -83,10 +83,36 @@ def menu_atualizar():
 
     query(vcon, vsql)
 
-def menu_consultar_ID():
-    ...
 
+def menu_consultar():
+    vsql = "SELECT * FROM tb_contatos"
+    res = consultar(vcon, vsql)
+    vlim = 10
+    vcont = 0
+
+    print('\n\tLISTA ATUAL\n')
+    for r in res:
+        print("ID:{0:_<3} Nome:{1:_<30} Telefone:{2:_<14} Email:{3:_<30}".format(r[0], r[1], r[2], r[3]))
+        vcont += 1
+        if vcont >= vlim:
+            vcont = 0
+
+    print('\nFim da lista')
+    os.system('pause')
 
 def menu_consultar_nomes():
-    ...
+    vnome = input('\nDigite o nome: ')  # não precisa ser o nome exato
+    vsql = f"SELECT * FROM tb_contatos WHERE T_NOMECONTATO LIKE '%{vnome}%'"
+    res = consultar(vcon, vsql)
+    vlim = 10
+    vcont = 0
 
+    print('\n\tLISTA ATUAL\n')
+    for r in res:
+        print("ID:{0:_<3} Nome:{1:_<30} Telefone:{2:_<14} Email:{3:_<30}".format(r[0], r[1], r[2], r[3]))
+        vcont += 1
+        if vcont >= vlim:
+            vcont = 0
+
+    print('\nFim da lista')
+    os.system('pause')

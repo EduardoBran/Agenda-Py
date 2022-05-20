@@ -1,7 +1,7 @@
 import os
 from CFB_Cursos._Projeto_Agenda.menu import menu_principal
 from CFB_Cursos._Projeto_Agenda.funcoes_CRUD import menu_inserir, menu_deletar
-from CFB_Cursos._Projeto_Agenda.funcoes_CRUD import menu_atualizar, menu_consultar_ID, menu_consultar_nomes
+from CFB_Cursos._Projeto_Agenda.funcoes_CRUD import menu_atualizar, menu_consultar, menu_consultar_nomes
 
 op = ''
 while op != '6':
@@ -16,7 +16,7 @@ while op != '6':
     elif op == '3':
         menu_atualizar()
     elif op == '4':
-        menu_consultar_ID()
+        menu_consultar()
     elif op == '5':
         menu_consultar_nomes()
     elif op == '6':
